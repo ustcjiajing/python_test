@@ -62,7 +62,7 @@ class LinkList(object):
         
     def addAtHead(self, val):
         """ 在链表的第一个元素之前添加一个值为val的节点。插入后，新节点将成为链表的第一个节点 """
-        temp = Node(item)
+        temp = Node(val)
         temp.setNext(self.head)
         self.head = temp
         
