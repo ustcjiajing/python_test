@@ -20,7 +20,12 @@ class LinkList(object):
     
     def get(self, index):
         """ 取链表中第index个节点的值。如果索引无效，则返回-1 """
-        pass
+        if index < 0 or index >= self.length():
+            return 
+        cur = self._head
+        for _ in range(index + 1):
+            cur = cur.next      #第一次循环后，cur为真正的头节点
+        return cur.value        #循环结束后，cur为index的节点
 
     def isEmpty(self):
         return self._head == None
