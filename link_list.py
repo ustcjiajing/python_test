@@ -1,50 +1,71 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-@File: list.py
+@File: link_list.py
 @Author: jiajing
 @Data: 2022/04/26
 """
 
 class Node(object):
     """ 节点类 """
-    def __init__(self, value=0, next=None):
-        self.value = value
-        self.next = next
-
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+    
+    def getData(self):
+        return self.data
+    
+    def getNext(self):
+        return self.next
+    
+    def setData(self, newdata):
+        self.data = newdata
+        
+    def setNext(self, newnext):
+        self.next = newnext
+        
 
 class LinkList(object):
     """ 单链表 """
-    def __init__(self, Node=None):
-        self._head = Node   
-    
+    def __init__(self):
+        self.head = Node   
+
+    def isEmpty(self):
+        return self.head == None
+
+    def length(self):
+        current = self.head
+        count = 0
+        while current != None:
+            count += 1
+            count = count.getNext()
+        return count
+        
     def get(self, index):
         """ 取链表中第index个节点的值。如果索引无效，则返回-1 """
         if index < 0 or index >= self.length():
             return 
-        cur = self._head
+        cur = self.head
         for _ in range(index + 1):
             cur = cur.next      #第一次循环后，cur为真正的头节点
         return cur.value        #循环结束后，cur为index的节点
-
-    def isEmpty(self):
-        return self._head == None
-
-    def length(self):
-        if self.is_empty():
-            return 0
-        else:
-            cur = self.__head
-            cnt = 1
-            while cur._next != None:
-                cnt += 1
-                cur = cur._next
-            return cnt
     
+    def search(self, val):
+        current = self.head
+        found = False
+        while current != None and not found:
+            if current.getData() == val:
+                found = True
+            else:
+                current = current.getNext()
+        return found
+        
     def addAtHead(self, val):
         """ 在链表的第一个元素之前添加一个值为val的节点。插入后，新节点将成为链表的第一个节点 """
-        pass
-
+        temp = Node(item)
+        temp.setNext(self.head)
+        self.head = temp
+        
     def addAtTail(self, val):
         """ 将值为 val 的节点追加到链表的最后一个元素 """
         pass
@@ -58,6 +79,21 @@ class LinkList(object):
         """
         pass
     
+    def remove(self, val):
+        current = self.head
+        previous = None
+        found = False
+        while not found:
+            if current.getData() == val:
+                found = True
+            else:
+                previous = current
+                current = current.getNext()
+        if previous == None:
+            self.head = current.getNext()
+        else:
+            previous.setNext(current.getNext())
+        
     def deleteAtIndex(self, index):
         """ 如果索引index有效，则删除链表中的第index个节点 """
         pass
