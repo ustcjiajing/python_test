@@ -12,14 +12,25 @@ class Solution(object):
   """
   """
   def reverse_list(self, head):
-    """ reverse list """
+    """ 反转链表：递归法 """
     if head is None or head.next is None:
-      return head
+        return head
     p = self.reverse_list(head.next)
     head.next.next = head
     head.next = None
     return p
   
+   def reverse_list_iter(self, head):
+     """ 反转链表：迭代法 """
+     if head is None or head.next is None:
+         return head
+     pre, cur = None, head
+     while cur != None:
+         next = cur.next
+         cur.next = pre
+         pre = cur
+         cur = next
+     return pre
   
 if __name__ == "__main__":
     head = None
