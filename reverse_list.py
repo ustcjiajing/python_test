@@ -20,7 +20,7 @@ class Solution(object):
     head.next = None
     return p
   
-   def reverse_list_iter(self, head):
+   def reverse_list(self, head):
      """ 反转链表：迭代法 """
      if head is None or head.next is None:
          return head
