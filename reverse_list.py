@@ -25,7 +25,7 @@ class Solution(object):
      if head is None or head.next is None:
          return head
      pre, cur = None, head
-     while cur != None:
+     while cur is not None:
          next = cur.next
          cur.next = pre
          pre = cur
