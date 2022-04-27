@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
+"""
+@File: reverse_list.py
+@Author: jiajing
+@Data: 2022/04/26
+"""
 
-# 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值 target 的那两个整数，并返回它们的数组下标。
+#给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值 target 的那两个整数，并返回它们的数组下标。
 
 class Solution(object):
     """
