@@ -11,17 +11,29 @@
 #如果链表中存在环 ，则返回 true 。 否则，返回 false 。
 
 class Solution(object):
-  """
-  """
-  def hasCycle(self, head):
-      """ 哈希表 """
-      if head is None or head.next is None:
-          return False
-      seen = set()
-      while head:
-          if head in seen:
-              return True
-          seen.add(head)
-          head = head.next
-      return False
+    """
+    """
+    def hasCycle(self, head):
+        """ 哈希表 """
+        if head is None or head.next is None:
+            return False
+        seen = set()
+        while head:
+            if head in seen:
+                return True
+            seen.add(head)
+            head = head.next
+        return False
     
+    def hasCycle(self, head):
+        """ 快慢指针 """
+        if head is None or head.next is None:
+            return False
+        slow = head
+        quick = head.next
+        while quick != slow:
+            if quick is None or quick.next is None:
+                return False
+            slow = slow.next
+            quick = quick.next.next
+        return True
