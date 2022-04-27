@@ -36,8 +36,15 @@ if __name__ == "__main__":
     head = None
     for count in range(1, 6):
         head = Node(count, head)
+    cur = head
+    while cur is not None:
+        print(cur.data)
+        cur = cur.next
+    
     s = Solution()
     res = s.reverse_list(head)
-    while res != None:
+    
+    print("===================")
+    while res is not None:
         print(res.data)
         res = res.next
