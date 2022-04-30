@@ -3,7 +3,7 @@
 """
 @File: link_list.py
 @Author: jiajing
-@Data: 2022/04/40
+@Data: 2022/04/30
 """
 
 import node
