@@ -12,14 +12,14 @@ class Node(object):
         self.data = data
         self.next = next
     
-    def getData(self):
+    def get_data(self):
         return self.data
     
-    def getNext(self):
+    def get_next(self):
         return self.next
     
-    def setData(self, newdata):
+    def set_data(self, newdata):
         self.data = newdata
         
-    def setNext(self, newnext):
+    def set_next(self, newnext):
         self.next = newnext
