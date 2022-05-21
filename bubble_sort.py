@@ -13,7 +13,6 @@ class Solution(object):
         return arr
 
 if __name__ == "__main__":
-    s = Solution()
     arr = [1,4,9,3,7,5]
-    new_arr = s.bubbleSort(arr)
-    print(new_arr)
+    s = Solution()
+    print(s.bubbleSort(arr))
