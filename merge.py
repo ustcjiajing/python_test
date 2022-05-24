@@ -25,7 +25,7 @@ def merge(self, nums1, m, nums2, n):
 # 空间复杂度：O(m+n),需要建立长度为 m+n 的中间数组 sorted
 def merge(self, nums1, m, nums2, n):
     sorted = []
-    p1, p2 = None, None
+    p1, p2 = 0, 0
     while p1 < m or p2 < n:
         if p1 == m:
             sorted.append(nums2[p2])
