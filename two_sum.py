@@ -9,17 +9,18 @@
 #给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值 target 的那两个整数，并返回它们的数组下标。
 
 class Solution(object):
-    # 时间复杂度：
-    # 空间复杂度：
+    # 时间复杂度：O(n)
+    # 空间复杂度：O(n) 
     def twoSum(self, nums, target):
-        records = {}
+        records = dict()
         for index, value in enumerate(nums):
             if target - value not in records:
                 records[value] = index
             else:
                 return [records[target - value], index]
-    # 时间复杂度：
-    # 空间复杂度：        
+             
+    # 时间复杂度：O(n2)
+    # 空间复杂度：O(1)
     def twoSum_1(self, nums, target):
         for i in range(0, len(nums)-1):
             for j in  range(i+1, len(nums)-1):
