@@ -11,8 +11,8 @@
 #如果链表中存在环 ，则返回 true 。 否则，返回 false 。
 
 class Solution(object):
-    """
-    """
+    # 时间复杂度：O(n)
+    # 空间复杂度：O(n)
     def hasCycle(self, head):
         """ 哈希表 """
         if head is None or head.next is None:
@@ -25,6 +25,8 @@ class Solution(object):
             head = head.next
         return False
     
+    # 时间复杂度：O(n)
+    # 空间复杂度：O(1)
     def hasCycle(self, head):
         """ 快慢指针 """
         if head is None or head.next is None:
