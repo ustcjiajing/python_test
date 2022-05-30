@@ -12,6 +12,8 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
+    # 时间复杂度：O(n)
+    # 空间复杂度：O(n)
     def levelOrder(self, root):
         if not root:
             return []
