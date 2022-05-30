@@ -19,17 +19,17 @@ class Solution(object):
         queue = [root]
         while queue:
             # 获取当前队列的长度，这个长度相当于 当前这一层的节点个数
-			size = len(queue)
-			level = []
+	    size = len(queue)
+       	    level = []
             # 将队列中的元素都拿出来(也就是获取这一层的节点)，放到临时list中
-			# 如果节点的左/右子树不为空，也放入队列中
-			for _ in xrange(size):
-				node = queue.pop(0)
-				level.append(node.val)
-				if node.left:
-					queue.append(node.left)
-				if node.right:
-					queue.append(node.right)
-			# 将临时list加入最终返回结果中
-			res.append(level)
+	    # 如果节点的左/右子树不为空，也放入队列中
+	    for _ in xrange(size):
+	        node = queue.pop(0)
+		level.append(node.val)
+		if node.left:
+		    queue.append(node.left)
+		if node.right:
+		    queue.append(node.right)
+	    # 将临时list加入最终返回结果中
+	    res.append(level)
         return res
