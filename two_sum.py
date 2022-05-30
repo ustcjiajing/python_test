@@ -22,10 +22,12 @@ class Solution(object):
     # 时间复杂度：O(n2)
     # 空间复杂度：O(1)
     def twoSum_1(self, nums, target):
-        for i in range(0, len(nums)-1):
-            for j in  range(i+1, len(nums)-1):
+        n = len(nums)
+        for i in range(n):
+            for j in  range(i+1, n):
                 if nums[i] + nums[j] == target:
                     return [i, j]
+        return []
 
 
 if __name__ == "__main__":
