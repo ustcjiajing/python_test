@@ -24,7 +24,7 @@ class Solution(object):
        	    level = []
             # 将队列中的元素都拿出来(也就是获取这一层的节点)，放到临时list中
 	    # 如果节点的左/右子树不为空，也放入队列中
-	    for _ in xrange(size):
+	    for _ in range(size):
 	        node = queue.pop(0)
 		level.append(node.val)
 		if node.left:
