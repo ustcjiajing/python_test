@@ -18,6 +18,7 @@ class Solution(object):
                 records[value] = index
             else:
                 return [records[target - value], index]
+        return []
              
     # 时间复杂度：O(n2)
     # 空间复杂度：O(1)
