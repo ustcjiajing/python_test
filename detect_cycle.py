@@ -15,13 +15,13 @@
 
 class Solution(object):
     def detectCycle(self, head):
-        slow, quick = head, head
-        while quick or quick.next:
-            slow = slow.next
+        quick = slow = head
+        while quick is not None and quick.next is not None:
             quick = quick.next.next
-            if quick == slow:
-                quick = head
-                while quick != slow:
-                    slow = slow.next
+            slow = slow.next
+            if quick == slow:                
+                slow = head
+                while slow != quick:
                     quick = quick.next
-                return quick
+                    slow = slow.next
+                return slow
