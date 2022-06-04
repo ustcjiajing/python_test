@@ -31,11 +31,10 @@ class Solution(object):
         """ 快慢指针 """
         if head is None or head.next is None:
             return False
-        slow = head
-        quick = head.next
-        while quick != slow:
-            if quick is None or quick.next is None:
-                return False
-            slow = slow.next
+        quick = slow = head
+        while quick is not None and quick.next is not None:
             quick = quick.next.next
-        return True
+            slow = slow.next
+            if quick == slow:
+                return True
+        return False
