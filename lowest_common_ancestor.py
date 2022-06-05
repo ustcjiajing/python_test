@@ -20,6 +20,8 @@
 
 
 class Solution(object):
+    # 时间复杂度：O(n)
+    # 空间复杂度：O(1)
     def lowestCommonAncestor(self, root, p, q):
         ancestor = root
         while True:
@@ -30,7 +32,9 @@ class Solution(object):
             else:
                 break
         return ancestor
-
+    
+    # 时间复杂度：O(n)
+    # 空间复杂度：O(1)
     def lowestCommonAncestor_1(self, root, p, q):
         if root is None:
             return None
