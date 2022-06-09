@@ -14,10 +14,9 @@ class Solution(object):
     def twoSum(self, nums, target):
         records = dict()
         for index, value in enumerate(nums):
-            if target - value not in records:
-                records[value] = index
-            else:
+            if target - value in records:
                 return [records[target - value], index]
+            records[nums[index] = index                
         return []
              
     # 时间复杂度：O(n2)
